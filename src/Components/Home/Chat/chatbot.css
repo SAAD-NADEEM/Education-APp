@@ -1,0 +1,277 @@
+/*                CHATBOT                     */
+.chatbot {
+  height: 100%;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--clr-300);
+}
+
+.chatbot header {
+  height: clamp(50px, 5vw, 70px);
+  width: 100%;
+  text-align: center;
+  font-weight: 800;
+  color: var(--clr-400);
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  align-content: center;
+  background: var(--clr-300);
+  border-bottom: 2px solid var(--clr-400);
+}
+
+.messages {
+  width: 80%;
+  align-self: center;
+  flex: 1;
+  padding: 2%;
+  gap: 10px;
+  overflow-x: scroll;
+}
+
+
+.chat {
+  max-width: 70%;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--clr-200);
+  background: var(--clr-300);
+  padding: 13px;
+  border-radius: 8px;
+  text-wrap: wrap;
+  position: relative;
+  /* background-color: red; */
+}
+
+/*  Save button  */
+.messages .chat:first-child .plus-btn {
+  display: none;
+}
+
+.chat .plus-btn {
+  display: block;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  margin: 5px 0 0 0;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  position: relative;
+  color: var(--clr-100);
+  background: var(--clr-500);
+}
+
+.plus-btn::after {
+  content: 'SAVE';
+  position: absolute;
+  display: block;
+  inset: 0;
+  margin-left: 25px;
+  color: var(--clr-500);
+  pointer-events: none;
+}
+
+.chat .plus-btn:hover {
+  opacity: 70%;
+}
+
+.chat .plus-btn:active {
+  transform: scale(90%);
+}
+
+.user .plus-btn {
+  display: none;
+}
+
+/*         MarkDown settings         */
+strong {
+  font-weight: 900;
+  color: var(--clr-100);
+  font-size: var(--fn-size);
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  color: var(--clr-200);
+  font-size: var(--fn-size);
+}
+
+ol {
+  list-style: none;
+  /* background-color: red; */
+}
+
+ol li {
+  padding-bottom: 4px;
+  color: var(--clr-200);
+  font-size: var(--fn-size);
+}
+
+p {
+  color: var(--clr-200);
+  font-size: var(--fn-size);
+}
+
+span {
+  font-size: var(--fn-size);
+  color: var(--clr-200);
+}
+
+/*         MarkDown settings         */
+
+.user {
+  color: var(--clr-400);
+  background-color: var(--clr-200);
+  align-self: end;
+  border-radius: 8px 8px 0 8px;
+}
+
+.user span {
+  color: var(--clr-400);
+}
+
+.model {
+  position: relative;
+  align-self: start;
+  border-radius: 0 8px 8px 8px;
+}
+
+.pdf {
+  display: none;
+}
+
+.inputArea {
+  height: 70px;
+  width: 80%;
+  gap: 10px;
+  align-self: center;
+  justify-content: space-around !important;
+  margin: 10px;
+  padding: 0 10px;
+  border-radius: 70px;
+  background: var(--clr-400);
+  border: 2px solid var(--clr-500);
+  overflow: hidden;
+  /* background-color: red; */
+}
+
+.inputArea input {
+  flex: 1;
+  width: 80%;
+  border: none;
+  padding-inline: clamp(5px, 1vw, 10px);
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
+  color: var(--clr-100);
+  background: var(--clr-400);
+  /* background-color: red; */
+}
+
+.inputArea input:focus {
+  outline: none;
+}
+
+.inputArea>button {
+  height: clamp(40px, 5vw, 60px);
+  width: clamp(40px, 5vw, 60px);
+  border: none;
+  border-radius: 50%;
+  background: url(/sentg.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+  /* background-color: green; */
+}
+
+.inputArea>button:nth-child(1) {
+  background: url(/pin.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90% auto;
+  /* background-color: red; */
+}
+
+.inputArea>button:nth-child(3):hover {
+  background-color: var(--clr-400);
+  opacity: 40%;
+  transition: all 200ms linear;
+}
+
+.inputArea>button:active {
+  transform: scale(90%);
+}
+
+#myFile {
+  display: none;
+}
+
+
+
+@media (max-width: 600px) {
+  .chat {
+    max-width: 100%;
+  }
+
+  .user {
+    max-width: 90%;
+  }
+
+  .messages {
+    padding-block: 4%;
+  }
+
+  .messages {
+    width: 95%;
+  }
+
+  .inputArea {
+    height: 50px;
+    width: 95%;
+  }
+
+  .inputArea input {
+    padding: 0;
+  }
+}
+
+
+
+/* loading bar */
+
+.loading-bar {
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+}
+
+
+
+.loading-bar div .loading-circle {
+  height: 40px;
+  width: 40px;
+  background: url(/loadingCircle.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.loading-bar div .loading-circle:nth-child(1) {
+  animation: bounce 2s infinite linear;
+}
+.loading-bar div .loading-circle:nth-child(2) {
+  animation: bounce 2s infinite linear;
+  animation-delay: 0.6s;
+}
+.loading-bar div .loading-circle:nth-child(3) {
+  animation: bounce 2s infinite linear;
+  animation-delay: 0.9s;
+}
+
+@keyframes bounce {
+  0%, 100% { opacity: 1; }   
+  50% { opacity: 0.2; }
+}
+
+
+

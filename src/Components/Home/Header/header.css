@@ -1,0 +1,224 @@
+
+/*                 Header                   */
+.main-header {
+    height: 95svh;
+    width: 100%;
+    padding: clamp(1rem, 3vw, 2.1rem);
+    padding-top: clamp(0.5rem, 2vw, 1rem);
+    gap: 5px;
+    border-radius: var(--radius);
+    border-top: none;
+    background: var(--clr-300);
+    overflow: hidden;
+    transition: all 100ms linear;
+  }
+  
+  
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10vh calc(100% - 80px);
+    grid-template-areas:
+      "box-3 box-3"
+      "box-1 box-2";
+  }
+  
+  .sec-1 {
+    grid-area: box-1;
+    /* background-color: green; */
+  }
+  
+  .sec-2 {
+    grid-area: box-2;
+    /* background-color: brown; */
+  }
+  
+  /* Navbar */
+  .navbar-desktop {
+    height: 80px;
+    width: 100%;
+    list-style: none;
+    justify-self: center;
+    grid-area: box-3;
+  }
+  
+  /* Navbar Logo */
+  
+  .logo-li {
+    gap: 5px;
+  }
+  
+  .logo-li img {
+    height: auto;
+    width: clamp(40px, 4vw, 60px);
+    filter: drop-shadow(0px 1px 3px var(--clr-400));
+    transition: all 200ms linear;
+  }
+  
+  .logo-li p {
+    font-size: clamp(1rem, 2vw, 2rem);
+    color: var(--clr-100);
+    font-weight: 800;
+    align-content: center;
+  }
+  
+  .navbar-desktop li img:hover {
+    filter: drop-shadow(0px 1px 3px var(--clr-500));
+  }
+  
+  /* Section left */
+  .sec-1 {
+    align-content: center;
+    padding: clamp(8px, 2vw, 20px);
+  }
+  
+  .sec-1-ctn h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--clr-100);
+  }
+  
+  .sec-1-ctn p {
+    font-size: clamp(0.8rem, 2vw, 1.6rem);
+    font-weight: 600;
+    color: var(--clr-200);
+    padding-block: clamp(5px, 1vw, 15px) 0;
+  }
+  
+  .sec-1-ctn button {
+    font-size: clamp(0.8rem, 2vw, 1.6rem);
+    color: var(--clr-400);
+    border-radius: 10px;
+    border: none;
+    padding: 10px clamp(10px, 1vw, 20px);
+    margin-top: clamp(10px, 2vw, 35px);
+    margin-right: 8px;
+    background: var(--clr-500);
+    transition: all 150ms linear;
+  }
+  
+  .sec-1-ctn button:hover {
+    opacity: 80%;
+  }
+  
+  .sec-1-ctn button:active {
+    transform: scale(85%);
+  }
+  
+  /* Section Right */
+  .sec-2-ctn {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    justify-content: end;
+  }
+  
+  .sec-2-ctn img {
+    height: clamp(300px, 47vw, 800px);
+    width: auto;
+    top: clamp(0px, 2vw, 50px);
+    position: absolute;
+  }
+  
+  
+  /*             SLIDE LAYOUT                */
+  
+  .slide {
+    width: 5%;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+  }
+  
+  .slide-div {
+    height: 85%;
+    width: 100%;
+  }
+  
+  .slide-logo {
+    border-radius: 50%;
+    padding: 5px;
+    background: var(--clr-400);
+    margin-bottom: 10px;
+  }
+  
+  .slide-logo img {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .btn-wrapper {
+    flex: 1;
+    width: 100%;
+  }
+  
+  .btn-wrapper div:nth-child(2) {
+    border-bottom: 5px solid var(--clr-400);
+  }
+  
+  .btn-wrapper div:nth-child(3) {
+    border-bottom: 5px solid var(--clr-400);
+    border-top: none;
+  }
+  
+  .add-btn {
+    display: flex;
+    justify-content: center;
+    padding-block: 10px;
+    border-top: 5px solid var(--clr-400);
+    cursor: pointer;
+  }
+  
+  .add-btn button:active {
+    transform: scale(90%);
+  }
+  
+  .add-btn button {
+    height: 50px;
+    width: 50px;
+    background: url(/addBTN.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--clr-400);
+  }
+  
+  @media (max-width: 600px) {
+    .main-header {
+      padding-top: 0;
+    }
+  
+    .grid-layout {
+      grid-template-columns: 1fr;
+      grid-template-rows: 10vh 1fr 1fr;
+      grid-template-areas:
+        "box-3"
+        "box-2"
+        "box-1";
+    }
+  
+    .sec-2-ctn {
+      justify-content: center;
+    }
+  
+    .sec-1-ctn p {
+      font-weight: 400;
+    }
+  
+    .slide {
+      height: 10%;
+      width: 100%;
+    }
+  
+    #root {
+      flex-direction: column;
+    }
+  
+    .chatbot {
+      height: 90%;
+    }
+  }
+  
